@@ -15,12 +15,6 @@ List<Hadeth> Ahadeth = [];
     if(Ahadeth.isEmpty){
      LoadHadethFile();}
     return Ahadeth.isEmpty? Center(child: CircularProgressIndicator(color: Color(0xffB7935F),)) : Container(
-      decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage('assets/images/main_background_light.png'),
-              fit:BoxFit.fill
-          )
-      ),
       child: Column(
 
         children: [
