@@ -16,13 +16,13 @@ SuraName({required this.suraTitle,required this.index,required this.versesNumber
       },
       child: Row(
         children: [
-          Expanded(child: Text(versesNumber,style: TextStyle(fontWeight: FontWeight.w600,fontSize: 25,fontFamily: 'El Messiri'),textAlign: TextAlign.center,)),
+          Expanded(child: Text(versesNumber,style: Theme.of(context).textTheme.titleMedium,textAlign: TextAlign.center,)),
           Container(
             width: 3,
             height: 40,
-            color: Color(0xffB7935F),
+            color: Theme.of(context).dividerColor,
           ),
-          Expanded(child: Text(suraTitle,style: TextStyle(fontWeight: FontWeight.w600,fontSize: 25,fontFamily: 'El Messiri'),textAlign: TextAlign.center,)),
+          Expanded(child: Text(suraTitle,style: Theme.of(context).textTheme.titleMedium,textAlign: TextAlign.center,)),
         ],
       ),
     );

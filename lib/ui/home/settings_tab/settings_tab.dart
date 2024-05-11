@@ -18,7 +18,7 @@ class _SettingsTabState extends State<SettingsTab> {
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Text('Theme',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,)),
+            child: Text('Theme',style: Theme.of(context).textTheme.titleSmall),
           ),
           InkWell(
             onTap: () {
@@ -28,17 +28,17 @@ class _SettingsTabState extends State<SettingsTab> {
               padding: EdgeInsets.all(18),
               decoration: BoxDecoration(
                 border: Border.all(
-                  color: Color(0xffB7935F),
+                  color: Theme.of(context).dividerColor,
                   width: 3,
                 ),
                 borderRadius: BorderRadius.circular(22),
               ),
-              child: Text('Light',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold)),
+              child: Text('Light',style: Theme.of(context).textTheme.titleSmall),
             ),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Text('Language',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold)),
+            child: Text('Language',style: Theme.of(context).textTheme.titleSmall),
           ),
           InkWell(
             onTap: () {
@@ -48,12 +48,12 @@ class _SettingsTabState extends State<SettingsTab> {
               padding: EdgeInsets.all(18),
               decoration: BoxDecoration(
                 border: Border.all(
-                  color: Color(0xffB7935F),
+                  color: Theme.of(context).dividerColor,
                   width: 3,
                 ),
                 borderRadius: BorderRadius.circular(22),
               ),
-              child: Text('English',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold)),
+              child: Text('English',style: Theme.of(context).textTheme.titleSmall),
             ),
           ),
         ],

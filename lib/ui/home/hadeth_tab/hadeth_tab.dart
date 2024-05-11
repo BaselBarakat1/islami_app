@@ -20,7 +20,7 @@ List<Hadeth> Ahadeth = [];
         children: [
           Image.asset('assets/images/hadeth_tab_header_image.png'),
           Divider(),
-          Text('Al Ahadeth',style: TextStyle(fontSize: 25,fontWeight: FontWeight.w600,fontFamily: 'El Messiri'),),
+          Text('Al Ahadeth',style: Theme.of(context).textTheme.headlineMedium,),
           Divider(),
           Expanded(child: ListView.separated(itemBuilder:(context, index) =>HadethTitleWidget(index: index, hadeth: Ahadeth[index]),separatorBuilder:(context, index) => Container(margin: EdgeInsets.symmetric(horizontal: 45),child: Divider()), itemCount: Ahadeth.length))
         ],

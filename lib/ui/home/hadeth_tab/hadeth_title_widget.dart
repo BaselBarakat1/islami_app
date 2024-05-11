@@ -18,7 +18,7 @@ class HadethTitleWidget extends StatelessWidget{
         padding: EdgeInsets.all(12),
         alignment: Alignment.center,
         child: Text('الحديث رقم ${index+1}',
-          style: TextStyle(fontSize: 25,fontWeight: FontWeight.w400,fontFamily: 'El Messiri'),
+          style: Theme.of(context).textTheme.titleMedium,
         ),
       ),
     );

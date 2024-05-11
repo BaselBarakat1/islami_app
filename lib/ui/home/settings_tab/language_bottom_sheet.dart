@@ -5,6 +5,7 @@ class languageBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: Theme.of(context).bottomSheetTheme.backgroundColor,
       padding: EdgeInsets.all(24),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
