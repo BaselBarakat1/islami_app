@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami_app/ui/home/quran_tab/sura_name.dart';
 import 'package:islami_app/ui/home/screens/quran_details.dart';
+import 'package:islami_app/ui/styles/my_theme_data.dart';
 
 class SuraDetails extends StatefulWidget {
 static const String routeName = 'sura_details';
@@ -22,7 +23,7 @@ class _SuraDetailsState extends State<SuraDetails> {
     return Verses.isEmpty? Center(child: CircularProgressIndicator(color: Color(0xffB7935F),)) : Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/images/main_background_light.png'),
+          image: AssetImage(MyThemeData.isDarkSelected? 'assets/images/main_background_dark.png':'assets/images/main_background_light.png'),
           fit: BoxFit.fill,
         ),
       ),
@@ -37,14 +38,14 @@ class _SuraDetailsState extends State<SuraDetails> {
           padding: EdgeInsets.symmetric(vertical: 20,horizontal: 15),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(30),
-            color: Color(0xffF8F8F8).withOpacity(0.8),
+            color: Theme.of(context).cardColor.withOpacity(0.8),
           ),
           child: Column(
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(' سورة ${args.title} ',style: TextStyle(fontSize: 25,fontWeight: FontWeight.w400,fontFamily:'El Messiri' ),),
+                  Text(' سورة ${args.title} ',style: Theme.of(context).textTheme.titleLarge,),
                   SizedBox(width: 10),
                   Icon(Icons.play_circle,size: 28,)
                 ],

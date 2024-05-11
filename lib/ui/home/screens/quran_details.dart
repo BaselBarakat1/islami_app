@@ -9,7 +9,7 @@ QuranDetails({required this.quranText});
       padding: EdgeInsets.all(5),
         child: Text(quranText,
           textDirection: TextDirection.rtl,
-          textAlign: TextAlign.center,style:TextStyle(fontSize: 24,fontWeight: FontWeight.w400,) ,));
+          textAlign: TextAlign.center,style:Theme.of(context).textTheme.bodyMedium,));
 
   }
 }
