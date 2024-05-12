@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami_app/ui/home/hadeth_tab/hadeth_title_widget.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class HadethTab extends StatefulWidget {
   @override
@@ -20,7 +22,7 @@ List<Hadeth> Ahadeth = [];
         children: [
           Image.asset('assets/images/hadeth_tab_header_image.png'),
           Divider(),
-          Text('Al Ahadeth',style: Theme.of(context).textTheme.headlineMedium,),
+          Text(AppLocalizations.of(context)!.ahadeth_title,style: Theme.of(context).textTheme.headlineMedium,),
           Divider(),
           Expanded(child: ListView.separated(itemBuilder:(context, index) =>HadethTitleWidget(index: index, hadeth: Ahadeth[index]),separatorBuilder:(context, index) => Container(margin: EdgeInsets.symmetric(horizontal: 45),child: Divider()), itemCount: Ahadeth.length))
         ],
