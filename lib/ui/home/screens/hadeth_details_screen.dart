@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/ui/home/hadeth_tab/hadeth_tab.dart';
 import 'package:islami_app/ui/styles/my_theme_data.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HadethDetails extends StatelessWidget {
 static const String routeName = 'Hadeth-Details';
@@ -14,7 +15,7 @@ static const String routeName = 'Hadeth-Details';
         ),
       ),
       child: Scaffold(
-        appBar: AppBar(title: Text('Islami')),
+        appBar: AppBar(title: Text(AppLocalizations.of(context)!.app_title)),
         body: SingleChildScrollView(
           child: Card(
             shape: RoundedRectangleBorder(
