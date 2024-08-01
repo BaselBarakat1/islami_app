@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:islami_app/providers/settings_provider.dart';
 import 'package:islami_app/ui/home/quran_tab/sura_name.dart';
 import 'package:islami_app/ui/home/screens/quran_details.dart';
 import 'package:islami_app/ui/styles/my_theme_data.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 
 class SuraDetails extends StatefulWidget {
 static const String routeName = 'sura_details';
@@ -18,13 +20,14 @@ class _SuraDetailsState extends State<SuraDetails> {
   @override
   Widget build(BuildContext context) {
     var args =ModalRoute.of(context)?.settings.arguments as SuraArgs ;
+    var settingProvider = Provider.of<settingsProvider>(context);
     if(Verses.isEmpty) {
       readQuranFile(args.index);
     }
     return Verses.isEmpty? Center(child: CircularProgressIndicator(color: Color(0xffB7935F),)) : Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(MyThemeData.isDarkSelected? 'assets/images/main_background_dark.png':'assets/images/main_background_light.png'),
+          image: AssetImage(settingProvider.getBackground()),
           fit: BoxFit.fill,
         ),
       ),

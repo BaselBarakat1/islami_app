@@ -14,16 +14,19 @@ SuraName({required this.suraTitle,required this.index,required this.versesNumber
         arguments:SuraArgs(title: suraTitle, index: index) ,
         );
       },
-      child: Row(
-        children: [
-          Expanded(child: Text(versesNumber,style: Theme.of(context).textTheme.titleMedium,textAlign: TextAlign.center,)),
-          Container(
-            width: 3,
-            height: 40,
-            color: Theme.of(context).dividerColor,
-          ),
-          Expanded(child: Text(suraTitle,style: Theme.of(context).textTheme.titleMedium,textAlign: TextAlign.center,)),
-        ],
+      child: Container(
+        padding: EdgeInsets.all(5),
+        child: Row(
+          children: [
+            Expanded(child: Text(versesNumber,style: Theme.of(context).textTheme.titleMedium,textAlign: TextAlign.center,)),
+            Container(
+              width: 3,
+              height: 40,
+              color: Theme.of(context).dividerColor,
+            ),
+            Expanded(child: Text(suraTitle,style: Theme.of(context).textTheme.titleMedium,textAlign: TextAlign.center,)),
+          ],
+        ),
       ),
     );
   }
