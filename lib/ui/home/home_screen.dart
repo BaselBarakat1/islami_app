@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app/providers/settings_provider.dart';
 import 'package:islami_app/ui/home/hadeth_tab/hadeth_tab.dart';
 import 'package:islami_app/ui/home/quran_tab/quran_tab.dart';
 import 'package:islami_app/ui/home/radio_tab/radio_tab.dart';
@@ -6,6 +7,7 @@ import 'package:islami_app/ui/home/settings_tab/settings_tab.dart';
 import 'package:islami_app/ui/home/tasbeh_tab/tasbeh_tab.dart';
 import 'package:islami_app/ui/styles/my_theme_data.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = 'Home_Screen';
@@ -27,9 +29,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var settingProvider = Provider.of<settingsProvider>(context);
     return Stack(children: [
       Image.asset(
-        MyThemeData.isDarkSelected? 'assets/images/main_background_dark.png' : 'assets/images/main_background_light.png',
+        settingProvider.getBackground(),
         height: double.infinity,
         width: double.infinity,
         fit: BoxFit.fill,

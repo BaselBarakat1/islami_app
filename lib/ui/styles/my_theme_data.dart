@@ -12,7 +12,7 @@ class MyThemeData {
       headlineMedium: TextStyle(fontWeight: FontWeight.w600,fontSize: 25,fontFamily: 'El Messiri',color: Colors.black) ,
       titleLarge: TextStyle(fontSize: 25,fontWeight: FontWeight.w400,fontFamily: 'El Messiri',color: Colors.black),
       titleMedium: TextStyle(fontSize: 25,fontWeight: FontWeight.w400,fontFamily: 'El Messiri',color: Colors.black) ,
-      titleSmall: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.black),
+      titleSmall: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.black,fontFamily: 'El Messiri'),
       bodyMedium: TextStyle(fontSize: 24,fontWeight: FontWeight.w400,color: Colors.black),
       bodySmall: TextStyle(fontSize: 24,fontWeight: FontWeight.bold,color: lightPrimaryColor),
     ),
@@ -47,6 +47,7 @@ class MyThemeData {
     bottomSheetTheme: BottomSheetThemeData(
       backgroundColor: Colors.white
     ),
+
   ) ;
 
   static ThemeData darkTheme = ThemeData(
@@ -57,7 +58,7 @@ class MyThemeData {
       headlineMedium: TextStyle(fontWeight: FontWeight.w600,fontSize: 25,fontFamily: 'El Messiri',color: Colors.white) ,
       titleLarge: TextStyle(fontSize: 25,fontWeight: FontWeight.w400,fontFamily: 'El Messiri',color: Colors.yellow),
       titleMedium: TextStyle(fontSize: 25,fontWeight: FontWeight.w400,fontFamily: 'El Messiri',color: Colors.white) ,
-      titleSmall: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.white),
+      titleSmall: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.white,fontFamily: 'El Messiri'),
       bodyMedium: TextStyle(fontSize: 24,fontWeight: FontWeight.w400,color: Colors.yellow),
       bodySmall: TextStyle(fontSize: 24,fontWeight: FontWeight.bold,color: Colors.yellow),
     ),

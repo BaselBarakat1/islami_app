@@ -1,7 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:islami_app/providers/settings_provider.dart';
 import 'package:islami_app/ui/home/home_screen.dart';
+import 'package:provider/provider.dart';
 
 import '../styles/my_theme_data.dart';
 
@@ -22,8 +24,9 @@ class _SplashScreenState extends State<SplashScreen> {
   }
   @override
   Widget build(BuildContext context) {
+    var settingProvider = Provider.of<settingsProvider>(context);
     return  Image.asset(
-      MyThemeData.isDarkSelected? 'assets/images/splash_screen_dark.png' : 'assets/images/splash_screen_light.png',
+      settingProvider.getSplashScreen(),
       width: double.infinity,
       height: double.infinity,
       fit: BoxFit.fill,

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app/providers/settings_provider.dart';
 import 'package:islami_app/ui/home/settings_tab/language_bottom_sheet.dart';
 import 'package:islami_app/ui/home/settings_tab/theme_bottom_sheet.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 
 class SettingsTab extends StatefulWidget {
 
@@ -12,6 +14,7 @@ class SettingsTab extends StatefulWidget {
 class _SettingsTabState extends State<SettingsTab> {
   @override
   Widget build(BuildContext context) {
+    var settingProvider = Provider.of<settingsProvider>(context);
     return Container(
       padding: EdgeInsets.all(22),
       child: Column(
@@ -34,7 +37,8 @@ class _SettingsTabState extends State<SettingsTab> {
                 ),
                 borderRadius: BorderRadius.circular(22),
               ),
-              child: Text('Light',style: Theme.of(context).textTheme.titleSmall),
+              child: Text(settingProvider.currentTheme==ThemeMode.light? 'Light':'Dark',
+                  style: Theme.of(context).textTheme.titleSmall),
             ),
           ),
           Padding(
@@ -54,7 +58,8 @@ class _SettingsTabState extends State<SettingsTab> {
                 ),
                 borderRadius: BorderRadius.circular(22),
               ),
-              child: Text('English',style: Theme.of(context).textTheme.titleSmall),
+              child: Text(settingProvider.currentLocal=='en'? 'English':'Arabic',
+                  style: Theme.of(context).textTheme.titleSmall),
             ),
           ),
         ],
