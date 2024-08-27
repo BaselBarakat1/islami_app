@@ -9,5 +9,6 @@
   "sura_name" : "إسم السوره",
   "ahadeth_title" : "الأحاديث",
   "theme" : "النمط",
-  "language" : "اللغه"
+  "language" : "اللغه",
+  "number_of_tasbeeh" : "عدد التسبيحات"
 }
