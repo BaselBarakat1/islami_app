@@ -9,5 +9,6 @@
   "sura_name" : "Sura Name",
   "ahadeth_title" : "Al Ahadeth",
   "theme" : "Theme",
-  "language" : "Language"
+  "language" : "Language",
+  "number_of_tasbeeh" : "Number of Tasbeehs"
 }

@@ -19,4 +19,10 @@ class settingsProvider extends ChangeNotifier{
   String getSplashScreen(){
     return currentTheme==ThemeMode.light? 'assets/images/splash_screen_light.png' : 'assets/images/splash_screen_dark.png';
   }
-}
+  String getBodyOfSebha(){
+    return currentTheme == ThemeMode.light? 'assets/images/light_body_of_sebha.png' : 'assets/images/dark_body_of_sebha.png';
+  }
+  String getHeadOfSebha(){
+    return currentTheme == ThemeMode.light? 'assets/images/light_head_of_sebha.png' : 'assets/images/dark_head_of_sebha.png';
+  }
+  }
