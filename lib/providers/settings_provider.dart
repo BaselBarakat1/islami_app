@@ -1,18 +1,50 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class settingsProvider extends ChangeNotifier{
   ThemeMode currentTheme = ThemeMode.light;
   String currentLocal = 'en';
-  void changeTheme(ThemeMode newTheme){
+  Future<void> changeTheme(ThemeMode newTheme) async {
     if(newTheme==currentTheme) return;
     currentTheme = newTheme;
     notifyListeners();
+
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setBool('isDark', newTheme == ThemeMode.dark);
   }
-  void changeLocal(String newLocal){
+
+  Future<void> changeLocal(String newLocal) async {
     if(newLocal==currentLocal)return;
     currentLocal=newLocal;
     notifyListeners();
+
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString('lang', newLocal);
   }
+
+  Future<void> getLang() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    String? lang = prefs.getString('lang');
+    if(lang != null){
+      currentLocal = lang;
+      notifyListeners();
+    }
+  }
+
+  Future<void> getTheme() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    bool? isDark = prefs.getBool('isDark');
+    if(isDark != null){
+      if(isDark){
+        currentTheme = ThemeMode.dark;
+      }else{
+        currentTheme = ThemeMode.light;
+      }
+      notifyListeners();
+    }
+  }
+
+
   String getBackground(){
    return currentTheme==ThemeMode.light? 'assets/images/main_background_light.png' : 'assets/images/main_background_dark.png';
   }
